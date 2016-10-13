@@ -3,8 +3,12 @@ A GPU miner for the Zcash cryptocurrency.
 
 ## Building
 
-Download and build libsodium in libs/ director.
+    mkdir libs
+    cd libs
 
+[Download and build libsodium](https://download.libsodium.org/doc/installation/index.html) in the `libs/ directory.
+
+    cd ..
     make
 
 ## Running
