@@ -209,26 +209,35 @@ __global__ void get_reduction(
             } 
         }
 
-        // TODO: implement merge sort on recovered indices
-        uint32_t temp[512];
-        // for size=4; size <= root_size; size *= 2
-            // for off=0; off < root_size; off += size
-                // i=0, j=size/2
-                // idx = 0
-                // while i < size/2 || j < size
-                    // if j == size || i < size/2 && roots[off+i] <= roots[off+j]
-                        // temp[off+idx] = roots[off+i]
-                        // i++
-                    // else 
-                        // temp[off+idx] = roots[off+j]
-                        // j++
-                    //idx++
-        uint32_t set = 1;
-        for(int i=0; i<(root_size/2); i++) {
-            for(int j=(root_size/2); j<root_size; j++) {
-                if(roots[i] == roots[j]) {
-                    set = 0;
+        uint32_t swap[512];
+        uint32_t *p_swap = swap;
+        uint32_t *p_roots = roots;
+        uint32_t *p_temp = 0;
+        for(int size=4; size<=root_size; size*=2) {
+            for(int off=0; off<root_size; off+=size) {
+                int i = 0;
+                int j = size/2;
+                int idx = 0;
+                while(i < size/2 || j < size) {
+                    if(j == size || ((i < size/2) && p_roots[off+i] <= p_roots[off+j])) {
+                        p_swap[off+idx] = p_roots[off+i];
+                        i++;
+                    } else {
+                        p_swap[off+idx] = p_roots[off+j];
+                        j++;
+                    }
+                    idx++;
                 }
+            }
+            p_temp = p_swap;
+            p_swap = p_roots;
+            p_roots = p_temp;
+        }
+
+        uint32_t set = 1;
+        for(int i=1; i<root_size; i++) {
+            if(p_roots[i] == p_roots[i-1]) {
+                set = 0;
             }
         }
 
