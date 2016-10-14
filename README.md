@@ -3,7 +3,7 @@ A GPU miner for the Zcash cryptocurrency.
 
 This project is licensed under the TGPPL. See LICENSE for more information.
 
-This project is currently under development. If you are not a developer planning on contributing back to this repository, please wait until after the zcashminers.org contest closes (10/28) to ask me for help building or running the code.
+This project is currently under development. It is not intended for end users before the 28th (zcashminers.org contest close). Please report any issues you find on this repository.
 
 ## Building
 
