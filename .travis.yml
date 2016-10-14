@@ -1,5 +1,4 @@
 before_install:
-  - whoami
   - sudo apt-get update
   - sudo apt-get install nvidia-common
   - sudo apt-get install nvidia-current
