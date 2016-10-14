@@ -27,3 +27,5 @@ This project is currently under development. It is not intended for end users be
   * Iterate (N-1) to check for distinct indices.
 * Integrate Zcash testing API.
 * Change lookup table to use same method as final functions.
+
+[![Build Status](https://travis-ci.org/douggard/zmine.svg?branch=master)](https://travis-ci.org/douggard/zmine)
