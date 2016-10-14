@@ -1,4 +1,7 @@
 before_install:
+  - sudo apt-get update
+  - apt-cache search cuda
+  - sudo apt-get install cuda
   - mkdir libs
   - cd libs
   - curl https://download.libsodium.org/libsodium/releases/libsodium-1.0.11.tar.gz > libsodium-1.0.11.tar.gz
@@ -7,8 +10,6 @@ before_install:
   - ./configure
   - make && make check
   - cd ../../
-  - sudo apt-get update
-  - sudo apt-get install cuda
 
 install:
   - make
