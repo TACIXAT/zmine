@@ -23,5 +23,7 @@ This project is currently under development. It is not intended for end users be
 ## TODO
 
 * Eliminate ij_buf in favor of indices per hash.
+  * Merge two sorted lists and each xor iteration.
+  * Iterate (N-1) to check for distinct indices.
 * Integrate Zcash testing API.
 * Change lookup table to use same method as final functions.
