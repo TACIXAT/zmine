@@ -4,7 +4,7 @@ BASE_PATH = $(shell pwd)
 ARCH = -arch=compute_52 -code=sm_52
 
 ifeq ($(shell whoami),travis)
-	ARCH = -arch=compute_20 -code=sm_20
+	ARCH = -arch=compute_35 -code=sm_35
 endif
 
 INCLUDES = -I$(BASE_PATH)/libs/libsodium-1.0.11/src/libsodium/include/ -I/usr/local/cuda/include/
