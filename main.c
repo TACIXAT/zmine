@@ -1,3 +1,6 @@
+// Copyright Douglas Goddard 2016
+// Licensed under the TGPPL
+
 #define _BSD_SOURCE
 #include <endian.h>
 #include <stdio.h>

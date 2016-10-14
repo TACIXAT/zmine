@@ -1,3 +1,6 @@
+// Copyright Douglas Goddard 2016
+// Licensed under the TGPPL
+
 #include <sodium.h>
 #include <thrust/sort.h>
 #include <thrust/copy.h>

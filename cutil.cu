@@ -1,3 +1,6 @@
+// Copyright Douglas Goddard 2016
+// Licensed under the TGPPL
+
 #include "csolv.h"
 
 // this is specific to N=200, K=9

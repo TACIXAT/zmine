@@ -1,3 +1,6 @@
+// Copyright Douglas Goddard 2016
+// Licensed under the TGPPL
+
 #include "csolv.h"
 
 // shout out to salix alba, you're a wizard mate

@@ -1,3 +1,6 @@
+// Copyright Douglas Goddard 2016
+// Licensed under the TGPPL
+
 #include "csolv.h"
 
 // TODO: these two are the same as the other ones 
