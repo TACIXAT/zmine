@@ -1,5 +1,5 @@
 // Copyright Douglas Goddard 2016
-// Licensed under the TGPPL
+// Licensed under the MIT license
 
 #include <sodium.h>
 #include <thrust/sort.h>
