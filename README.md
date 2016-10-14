@@ -19,3 +19,9 @@ This project is currently under development. It is not intended for end users be
 
     export LD_LIBRARY_PATH=`pwd`/libs/libsodium-1.0.11/src/libsodium/.libs/:/usr/local/cuda-7.5/lib64
     ./a.out
+
+## TODO
+
+* Eliminate ij_buf in favor of indices per hash.
+* Integrate Zcash testing API.
+* Change lookup table to use same method as final functions.
