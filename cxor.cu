@@ -130,7 +130,6 @@ __global__ void calculate_pairs(
     }
 }
 
-// TODO: implement merge sort on recovered indices
 __global__ void get_reduction(
         //clock_t * clocks,
         uint32_t *reduction, 
@@ -210,6 +209,20 @@ __global__ void get_reduction(
             } 
         }
 
+        // TODO: implement merge sort on recovered indices
+        uint32_t temp[512];
+        // for size=4; size <= root_size; size *= 2
+            // for off=0; off < root_size; off += size
+                // i=0, j=size/2
+                // idx = 0
+                // while i < size/2 || j < size
+                    // if j == size || i < size/2 && roots[off+i] <= roots[off+j]
+                        // temp[off+idx] = roots[off+i]
+                        // i++
+                    // else 
+                        // temp[off+idx] = roots[off+j]
+                        // j++
+                    //idx++
         uint32_t set = 1;
         for(int i=0; i<(root_size/2); i++) {
             for(int j=(root_size/2); j<root_size; j++) {
@@ -240,6 +253,14 @@ __global__ void remap_reduction(
             uint32_t index = d_mapping[t_index];
             uint32_t i = *(old_d_ij_buf+2*sum_prev_size+t_index);
             uint32_t j = *(old_d_ij_buf+2*sum_prev_size+prev_size+t_index);
+
+            // sort pairs in first round
+            if(!sum_prev_size && j < i) {
+                i ^= j;
+                j ^= i;
+                i ^= j;
+            }
+            
             *(new_d_ij_buf+2*sum_prev_size+index) = i;
             *(new_d_ij_buf+2*sum_prev_size+new_size+index) = j;
         }
