@@ -145,6 +145,7 @@ __global__ void get_reduction(
         //if(t_index == 0) {
         //     start = clock();
         //}
+
         uint32_t root_size = (1<<(r+1));
         // uint32_t *roots = (uint32_t *)malloc(sizeof(uint32_t)*root_size);
         uint32_t roots[512];
