@@ -13,7 +13,7 @@
 #define IV_6 0x1f83d9abfb41bd6bULL
 #define IV_7 0x5be0cd19137e2179ULL
 
-__device__ static const uint8_t blake2b_sigma[12][16] = {
+__constant__ static const uint8_t blake2b_sigma[12][16] = {
     {  0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15 } ,
     { 14, 10,  4,  8,  9, 15, 13,  6,  1, 12,  0,  2, 11,  7,  5,  3 } ,
     { 11,  8, 12,  0,  5,  2, 15, 13, 10, 14,  3,  6,  7,  1,  9,  4 } ,
